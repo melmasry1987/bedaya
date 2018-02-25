@@ -1,0 +1,28 @@
+class Solution:
+    def hammingDistance(self, x, y):
+        """
+        :type x: int
+        :type y: int
+        :rtype: int
+        """
+        var1 = str(bin(x))[2:]
+        var2 = str(bin(y))[2:]
+        solu = 0
+        length = 0
+        if len(var1)> len(var2):
+            length = len(var1) - len(var2) 
+            var2 = ("0" * length) + var2
+            print(var1,var2)
+            for i in range (0,len(var1)):
+                if var1[i] != var2[i]:     
+                    solu = solu + 1
+        else: 
+            length = len(var2) - len(var1)
+            var1 = ("0" * length) + var1
+            print(var2,var1)
+            for j in range (0,len(var1)):
+                if var1[j] != var2[j]:     
+                    solu = solu + 1
+                
+        return solu
+    
